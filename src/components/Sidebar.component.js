@@ -1,7 +1,7 @@
 import React from 'react';
 export const Sidebar = () => {
 	return (
-		<div className="w-full border text-center">
+		<div className="w-full h-screen90 border text-center">
 			<div className="py-2 ml-2 mt-3 mb-3 flex justify-center rounded-full text-xs items-center cursor-pointer shadow-full">
 				<div>
 					<svg className="w-6 h-6" viewBox="0 0 36 36">
@@ -17,13 +17,23 @@ export const Sidebar = () => {
 
 			<div>Calender</div>
 			<div>
-				<input className="w-full border" type="text" />
+				<input className="w-full border text-xs" type="text" placeholder="Search for people" />
 			</div>
 			<div>
-				<p>My Calenders</p>
+				<label>My Calenders</label>
+				<form action="/action_page.php">
+					<input type="checkbox" name="vehicle1" value="Bike" checked /> Firoj Siddiki<br />
+					<input type="checkbox" name="vehicle2" value="Car" /> Contacts<br />
+					<input type="checkbox" name="vehicle3" value="Boat" /> Remainder<br />
+					<input type="checkbox" name="vehicle3" value="Boat" /> Tasks<br />
+					<br />
+				</form>
 			</div>
 			<div>
-				<p>Other Calenders</p>
+				<label>Other Calenders</label>
+				<form>
+					<input type="checkbox" name="vehicle3" value="Boat" checked /> I have a boat<br />
+				</form>
 			</div>
 			<footer>
 				<p>
