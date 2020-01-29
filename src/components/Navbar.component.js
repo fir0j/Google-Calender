@@ -3,12 +3,12 @@ import Previous from '../assests/previous.svg';
 import Next from '../assests/next.svg';
 import Search from '../assests/search.svg';
 
-export const Navbar = () => {
+export const Navbar = (props) => {
 	return (
 		<nav className="flex justify-between text-xs my-2">
 			<div className="w-2/12 flex justify-around items-center">
 				<figure className="">
-					<button className="inline-block">
+					<button className="inline-block" onClick={props.toggleSidebar}>
 						<svg className="w-6 h-6 fill-current text-gray-700" focusable="false" viewBox="0 0 24 24">
 							<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
 						</svg>
