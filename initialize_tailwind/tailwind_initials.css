@@ -25,6 +25,16 @@
 	@apply bg-indigo-600;
 }
 
+.shadow-full {
+	border: 1px solid rgba(128, 128, 128, 0.10);
+	box-shadow: 0px 2px 1px -1px rgba(128, 128, 128, 0.7);
+}
+
+.shadow-full:hover {
+	box-shadow: 0px 4px 9px -2px gray;
+	background-color: rgba(128, 128, 128, 0.04);
+}
+
 @screen sm {
 	.btn {
 		@apply text-base;
