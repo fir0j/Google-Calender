@@ -40,7 +40,7 @@ export const Navbar = (props) => {
 				</div>
 				<div className="flex items-center">
 					<span className="mr-4">
-						<img className="w-6 h-6 opacity-75" src={Search} alt="" />
+						<img className="w-6 h-6 opacity-50" src={Search} alt="" />
 					</span>
 					<span className="mr-4">
 						<svg className=" w-6 h-6 fill-current text-gray-600" viewBox="0 0 24 24" focusable="false">
