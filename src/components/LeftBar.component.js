@@ -1,5 +1,5 @@
 import React from 'react';
-export const Sidebar = () => {
+export const LeftBar = () => {
 	return (
 		<div className="w-full h-screen90 text-center">
 			<div className="h-full flex flex-col justify-between">
@@ -18,7 +18,9 @@ export const Sidebar = () => {
 					</div>
 
 					<div className="h-full flex flex-col justify-start ml-6">
-						<div className="mb-3">Calender</div>
+						<div className="mb-3 border w-full h-1/3 flex items-center justify-center text-xs ">
+							Calender
+						</div>
 
 						<div>
 							<input
