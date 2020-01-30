@@ -1,5 +1,10 @@
 import React from 'react';
-export const LeftBar = () => {
+import DayPicker from 'react-day-picker';
+import '../daypicker.style.css';
+
+export const LeftBar = ({ handleDayClick, selectedDay }) => {
+	const WEEKDAYS_SHORT = [ 'S', 'M', 'T', 'W', 'T', 'F', 'S' ];
+
 	return (
 		<div className="w-full h-screen90 text-center">
 			<div className="h-full flex flex-col justify-between">
@@ -18,8 +23,14 @@ export const LeftBar = () => {
 					</div>
 
 					<div className="h-full flex flex-col justify-start ml-6">
-						<div className="mb-3 border w-full h-1/3 flex items-center justify-center text-xs ">
-							Calender
+						<div className="mb-3 border w-full flex items-center justify-center text-xs ">
+							<div className="flex flex-col w-full h-full">
+								<DayPicker
+									weekdaysShort={WEEKDAYS_SHORT}
+									onDayClick={handleDayClick}
+									selectedDays={selectedDay}
+								/>
+							</div>
 						</div>
 
 						<div>
@@ -36,7 +47,7 @@ export const LeftBar = () => {
 									<label className="my-3 flex text-sm font-medium">My Calenders</label>
 									<form className="text-xs">
 										<div className="mb-1 flex items-center">
-											<input type="checkbox" name="vehicle1" value="user" checked />
+											<input type="checkbox" name="vehicle1" value="user" checked readOnly />
 											<label>Firoj Siddiki </label>
 										</div>
 
@@ -61,7 +72,8 @@ export const LeftBar = () => {
 								<label className="mb-3 flex text-sm font-medium">Other Calenders</label>
 								<form>
 									<div className="flex items-center text-xs">
-										<input type="checkbox" name="vehicle3" value="Boat" checked /> Holidays in India<br />
+										<input type="checkbox" name="vehicle3" value="Boat" checked readOnly /> Holidays
+										in India<br />
 									</div>
 								</form>
 							</div>

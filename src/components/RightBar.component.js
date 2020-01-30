@@ -34,7 +34,7 @@ export const RightBar = () => {
 					width="20px"
 					height="20px"
 					viewBox="0 0 24 24"
-					enable-background="new 0 0 24 24"
+					enableBackground="new 0 0 24 24"
 					fill="#5F6368"
 				>
 					<path d="M8.59,16.59L13.17,12L8.59,7.41L10,6l6,6l-6,6L8.59,16.59z" />

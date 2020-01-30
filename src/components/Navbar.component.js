@@ -2,13 +2,13 @@ import React from 'react';
 import Previous from '../assests/previous.svg';
 import Next from '../assests/next.svg';
 
-export const Navbar = (props) => {
+export const Navbar = ({ toggleSidebar, navBarDate }) => {
 	return (
 		<nav className="flex justify-between text-xs my-2">
 			<div className="w-2/12 flex justify-around items-center">
 				<button
 					className="p-1 inline-block hover:border rounded-full hover:bg-gray-200 focus:outline-none"
-					onClick={props.toggleSidebar}
+					onClick={toggleSidebar}
 				>
 					<svg className="w-6 h-6 fill-current text-gray-700" focusable="false" viewBox="0 0 24 24">
 						<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
@@ -19,7 +19,7 @@ export const Navbar = (props) => {
 						className="w-8 h-8"
 						alt="calender"
 						src="https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_28_v1.png"
-						srcset="https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_28_v1.png 1x, https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_28_v1.png 2x "
+						srcSet="https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_28_v1.png 1x, https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_28_v1.png 2x "
 					/>
 				</label>
 				<span>Calendar</span>
@@ -36,7 +36,7 @@ export const Navbar = (props) => {
 					<span className="mr-4">
 						<img className="w-3 h-3" src={Next} alt="" />
 					</span>
-					<span className="font-medium text-gray-700 tracking-wider">Jan-Feb 2020</span>
+					<span className="font-medium text-gray-700 tracking-wider">{navBarDate}</span>
 				</div>
 				<div className="flex items-center">
 					<span className="mr-4">
