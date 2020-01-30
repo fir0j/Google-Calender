@@ -1,7 +1,6 @@
 import React from 'react';
 import Previous from '../assests/previous.svg';
 import Next from '../assests/next.svg';
-import Search from '../assests/search.svg';
 
 export const Navbar = (props) => {
 	return (
@@ -40,7 +39,15 @@ export const Navbar = (props) => {
 				</div>
 				<div className="flex items-center">
 					<span className="mr-4">
-						<img className="w-5 h-5 opacity-50" src={Search} alt="" />
+						<svg
+							className="inline-block h-6 pl-4 fill-current text-gray-600"
+							focusable="false"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+						>
+							<path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+						</svg>
+						{/* <img className="w-5 h-5 opacity-50" src={Search} alt="" /> */}
 					</span>
 					<span className="mr-4">
 						<svg className=" w-6 h-6 fill-current text-gray-600" viewBox="0 0 24 24" focusable="false">
