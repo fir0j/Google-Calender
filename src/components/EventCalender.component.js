@@ -1,9 +1,12 @@
 import React from 'react';
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import '../fullCalendar.scss';
 
 export const EventCalender = () => {
 	return (
-		<div className="w-full ml-2 h-screen90 flex justify-center items-center bg-gray-200 opacity-50">
-			<p>I am an Event Calender!</p>
+		<div className="w-auto ml-2  text-xs opacity-50">
+			<FullCalendar defaultView="dayGridMonth" plugins={[ dayGridPlugin ]} />
 		</div>
 	);
 };

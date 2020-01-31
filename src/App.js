@@ -38,7 +38,7 @@ function App() {
 							handleDayClick={handleDayClick}
 						/>
 					</div>
-					<div className="w-full">
+					<div className="w-auto m-1 h-screen90 overflow-auto">
 						<EventCalender />
 					</div>
 					<div className="w-16 h-screen90 flex-none text-center text-xs">
