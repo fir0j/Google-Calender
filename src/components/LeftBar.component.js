@@ -38,7 +38,6 @@ export const LeftBar = ({ handleDayClick, selectedDay }) => {
 								className="pl-2 h-8 w-full border-b-2 border-transparent rounded rounded-b-none focus:border-blue-600 outline-none text-xs bg-gray-100"
 								type="text"
 								placeholder="Search for people"
-								style={{ 'border-style': 'solid !important' }}
 							/>
 						</div>
 
