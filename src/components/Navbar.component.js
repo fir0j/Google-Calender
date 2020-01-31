@@ -31,7 +31,7 @@ export const Navbar = ({ toggleSidebar, navBarDate }) => {
 						<button className="inline-block border rounded px-2 py-1 ">Today</button>
 					</span>
 					<span className="mr-4">
-						<img className="w-3 h-3" src={Previous} alt="" />
+						<img className="w-3 h-3 " src={Previous} alt="" />
 					</span>
 					<span className="mr-4">
 						<img className="w-3 h-3" src={Next} alt="" />

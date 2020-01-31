@@ -1,14 +1,14 @@
 import React from 'react';
 import DayPicker from 'react-day-picker';
-import '../daypicker.style.css';
+// import '../daypicker.style.css';
 
 export const LeftBar = ({ handleDayClick, selectedDay }) => {
 	const WEEKDAYS_SHORT = [ 'S', 'M', 'T', 'W', 'T', 'F', 'S' ];
 
 	return (
-		<div className="w-full h-screen90 text-center">
+		<div className="w-full h-screen90 text-center leftbar">
 			<div className="h-full flex flex-col justify-between">
-				<div className="h-full flex flex-col justify-between">
+				<div className="h-full flex flex-col justify-between DPcalender">
 					<div className="py-2 ml-2 mt-3 mb-3 flex justify-center rounded-full text-xs items-center cursor-pointer shadow-full">
 						<div>
 							<svg className="w-6 h-6" viewBox="0 0 36 36">
@@ -23,7 +23,7 @@ export const LeftBar = ({ handleDayClick, selectedDay }) => {
 					</div>
 
 					<div className="h-full flex flex-col justify-start ml-6">
-						<div className="mb-3 border w-full flex items-center justify-center text-xs ">
+						<div className="mb-3 border w-full flex items-center justify-center text-xs">
 							<div className="flex flex-col w-full h-full">
 								<DayPicker
 									weekdaysShort={WEEKDAYS_SHORT}
@@ -33,11 +33,12 @@ export const LeftBar = ({ handleDayClick, selectedDay }) => {
 							</div>
 						</div>
 
-						<div>
+						<div className="searchPeople">
 							<input
 								className="pl-2 h-8 w-full border-b-2 border-transparent rounded rounded-b-none focus:border-blue-600 outline-none text-xs bg-gray-100"
 								type="text"
 								placeholder="Search for people"
+								style={{ 'border-style': 'solid !important' }}
 							/>
 						</div>
 
