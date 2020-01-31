@@ -23,7 +23,7 @@ export const LeftBar = ({ handleDayClick, selectedDay }) => {
 					</div>
 
 					<div className="h-full flex flex-col justify-start ml-6">
-						<div className="mb-3 border w-full flex items-center justify-center text-xs">
+						<div className="mb-3 text-xs -ml-8">
 							<div className="flex flex-col w-full h-full">
 								<DayPicker
 									weekdaysShort={WEEKDAYS_SHORT}
