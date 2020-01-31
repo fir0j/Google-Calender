@@ -6,6 +6,7 @@
 
 .searchPeople * {
 	border-style: solid;
+	outline: none;
 }
 
 .DayPicker {
@@ -185,7 +186,7 @@
 
 .DayPicker-Day--today {
 	color: whitesmoke;
-	background-color: #1a73e8;
+	/* background-color: #1a73e8; */
 	font-weight: 700;
 }
 
