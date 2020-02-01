@@ -5,12 +5,8 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import '../fullCalendar.scss';
 
-export const EventCalender = () => {
+export const EventCalender = ({ calendarEvents, setCalendarEvents }) => {
 	const [ calendarWeekends, setCalendarWeekends ] = useState(true);
-	const [ calendarEvents, setCalendarEvents ] = useState([
-		{ title: 'Event Now', start: new Date() },
-		{ title: 'custom event', start: '2020-02-05' }
-	]);
 	const calendarComponentRef = React.createRef();
 
 	const toggleWeekends = () => {
