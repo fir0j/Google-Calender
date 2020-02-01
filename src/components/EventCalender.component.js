@@ -7,7 +7,10 @@ import '../fullCalendar.scss';
 
 export const EventCalender = () => {
 	const [ calendarWeekends, setCalendarWeekends ] = useState(true);
-	const [ calendarEvents, setCalendarEvents ] = useState([ { title: 'Event Now', start: new Date() } ]);
+	const [ calendarEvents, setCalendarEvents ] = useState([
+		{ title: 'Event Now', start: new Date() },
+		{ title: 'custom event', start: '2020-02-05' }
+	]);
 	const calendarComponentRef = React.createRef();
 
 	const toggleWeekends = () => {
@@ -17,17 +20,38 @@ export const EventCalender = () => {
 	const gotoPast = () => {
 		let calendarApi = calendarComponentRef.current.getApi();
 		calendarApi.gotoDate('2000-01-01');
+		// calendarApi.next();
 	};
 
 	const handleDateClick = (arg) => {
-		setCalendarEvents([
-			...calendarEvents,
-			{
-				title: 'you rocked it firoj',
-				start: arg.date,
-				allDay: arg.allDay
-			}
-		]);
+		// alert(arg.dateStr);
+		if (window.confirm('want to add an event on ' + arg.dateStr + '?')) {
+			console.log(arg);
+			setCalendarEvents([
+				...calendarEvents,
+				{
+					title: 'you rocked it firoj',
+					start: arg.date,
+					allDay: arg.allDay
+				}
+			]);
+		}
+	};
+
+	const handleEventClick = ({ event, view }) => {
+		console.log(event);
+		let title = prompt('Want to update ' + event.title + '?');
+		let filteredEvents = calendarEvents.filter((item) => item.title !== event.title);
+		if (title) {
+			setCalendarEvents([
+				...filteredEvents,
+				{
+					title: title,
+					start: event.start,
+					allDay: event.allDay
+				}
+			]);
+		}
 	};
 
 	return (
@@ -44,15 +68,20 @@ export const EventCalender = () => {
 				<FullCalendar
 					defaultView="dayGridMonth"
 					header={{
-						left: 'prev,next today',
+						left: 'today,prev,next',
 						center: 'title',
-						right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+						right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeeK'
 					}}
 					plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin ]}
 					ref={calendarComponentRef}
 					weekends={calendarWeekends}
 					events={calendarEvents}
 					dateClick={handleDateClick}
+					eventClick={handleEventClick}
+					selectable={true}
+					editable={true}
+					eventLimit={true}
+					selectHelper={true}
 				/>
 			</div>
 		</div>

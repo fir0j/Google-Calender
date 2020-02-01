@@ -43,6 +43,8 @@
 	}
 }
 
+/* custom scrollbar */
+
 ::-webkit-scrollbar {
 	width: 7px;
 }
