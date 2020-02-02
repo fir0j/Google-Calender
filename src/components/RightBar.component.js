@@ -5,8 +5,8 @@ import Task from '../assests/task.png';
 
 export const RightBar = () => {
 	return (
-		<div className="flex h-full flex-col items-center justify-between">
-			<div className=" h-1/3 flex flex-col justify-around">
+		<div className="flex h-full w-full flex-col items-center justify-between">
+			<div className=" h-1/3 flex flex-col justify-around items-center">
 				<span className="">
 					<img className="w-5 h-5" src={Keep} alt="" />
 				</span>

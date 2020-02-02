@@ -74,15 +74,47 @@
 
 .demo-app-calendar button {
 	background: #4a90e2;
+	font-size: 0.5rem;
 }
 
 .fc-center {
 	color: gray;
+	font-size: 0.4rem;
 }
 
 .fc-widget-header {
 	color: rgb(66, 63, 63, 0.95);
 	height: 40px;
+}
+
+@media screen and (min-device-width: 480px) {
+	.fc-center {
+		font-size: 0.4rem;
+	}
+
+	.demo-app-calendar button {
+		font-size: 0.5rem;
+	}
+}
+
+@media screen and (min-device-width: 640px) {
+	.fc-center {
+		font-size: 0.5rem;
+	}
+
+	.demo-app-calendar button {
+		font-size: 0.6rem;
+	}
+}
+
+@media screen and (min-device-width: 768px) {
+	.fc-center {
+		font-size: inherit;
+	}
+
+	.demo-app-calendar button {
+		font-size: inherit;
+	}
 }
 
 @tailwind utilities;

@@ -9,7 +9,6 @@ module.exports = {
 				'72': '18rem'
 			},
 			screens: {
-				portrait: '320px',
 				landscape: '480px'
 			},
 			height: {
