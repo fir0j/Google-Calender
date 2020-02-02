@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 
-export const CustomInputDialog = ({ createEvent, eventTitle, setEventTitle, dialogStatus, setDialogStatus }) => {
+export const CustomInputDialog = ({ handleSave, dialogStatus, setDialogStatus }) => {
 	const [ modalIsOpen, setIsOpen ] = useState(dialogStatus);
+	const [ eventTitle, setEventTitle ] = useState(null);
 
 	// in order to update or render the child component when it's prop in the parent compoenent changes.
 	useEffect(
 		() => {
 			setIsOpen(dialogStatus);
+			setEventTitle(null);
 		},
 		[ dialogStatus ]
 	);
@@ -41,7 +43,7 @@ export const CustomInputDialog = ({ createEvent, eventTitle, setEventTitle, dial
 					</button>
 				</div>
 				<div className="mb-2">
-					<form onSubmit={createEvent}>
+					<form onSubmit={(e) => handleSave(eventTitle, setEventTitle, e)}>
 						<input
 							className="w-full border-gray-500 border-b focus:border-transparent focus:border-blue-700 focus:outline-none text-sm text-gray-600"
 							onChange={(event) => setEventTitle(event.target.value)}
@@ -70,7 +72,7 @@ export const CustomInputDialog = ({ createEvent, eventTitle, setEventTitle, dial
 					<button className="pr-2 font-semibold text-gray-600">More options</button>
 					<button
 						className="p-1 w-20 border rounded font-semibold bg-blue-600 hover:bg-blue-700"
-						onClick={createEvent}
+						onClick={(e) => handleSave(eventTitle, setEventTitle, e)}
 					>
 						Save
 					</button>

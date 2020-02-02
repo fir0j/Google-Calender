@@ -4,10 +4,12 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import '../fullCalendar.scss';
-// import { CustomInputDialog } from './CustomInputDialog.component';
+import { CustomInputDialog } from './CustomInputDialog.component';
 
 export const EventCalender = ({ calendarEvents, setCalendarEvents }) => {
 	const [ calendarWeekends, setCalendarWeekends ] = useState(true);
+	const [ dialogStatus, setDialogStatus ] = useState(false);
+	const [ getarg, setArg ] = useState({ start: null, allDay: null });
 	const calendarComponentRef = React.createRef();
 
 	const toggleWeekends = () => {
@@ -20,24 +22,40 @@ export const EventCalender = ({ calendarEvents, setCalendarEvents }) => {
 		// calendarApi.next();
 	};
 
+	// const handleDateClick = (arg) => (eventTitle, setEventTitle, e) => {
+	// 	alert(dialogStatus);
+	// 	setDialogStatus(true);
+	// 	setCalendarEvents([
+	// 		...calendarEvents,
+	// 		{
+	// 			title: eventTitle,
+	// 			start: arg.date,
+	// 			allDay: arg.allDay
+	// 		}
+	// 	]);
+	// 	e.preventDefault();
+	// 	setEventTitle(null);
+	// };
+
+	const addEvent = (eventTitle, setEventTitle, e) => {
+		e.preventDefault();
+		setCalendarEvents([
+			...calendarEvents,
+			{
+				title: eventTitle,
+				start: getarg.start,
+				allDay: getarg.allDay
+			}
+		]);
+		console.log(eventTitle);
+		console.log(getarg);
+		setEventTitle(null);
+		setDialogStatus(false);
+	};
+
 	const handleDateClick = (arg) => {
-		// return (
-		// 	<div>
-		// 		<CustomInputDialog />
-		// 	</div>
-		// );
-		// alert(arg.dateStr);
-		if (window.confirm('want to add an event on ' + arg.dateStr + '?')) {
-			console.log(arg);
-			setCalendarEvents([
-				...calendarEvents,
-				{
-					title: 'you rocked it firoj',
-					start: arg.date,
-					allDay: arg.allDay
-				}
-			]);
-		}
+		setDialogStatus(true);
+		setArg({ start: arg.dateStr, allDay: arg.allDay });
 	};
 
 	const handleEventClick = ({ event, view }) => {
@@ -86,6 +104,7 @@ export const EventCalender = ({ calendarEvents, setCalendarEvents }) => {
 					selectHelper={true}
 				/>
 			</div>
+			<CustomInputDialog handleSave={addEvent} dialogStatus={dialogStatus} setDialogStatus={setDialogStatus} />
 		</div>
 	);
 };

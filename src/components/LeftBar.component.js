@@ -3,12 +3,11 @@ import DayPicker from 'react-day-picker';
 import { CustomInputDialog } from './CustomInputDialog.component';
 
 export const LeftBar = ({ handleDayClick, selectedDay, calendarEvents, setCalendarEvents }) => {
-	const [ eventTitle, setEventTitle ] = useState(null);
 	const [ dialogStatus, setDialogStatus ] = useState(false);
 
 	const WEEKDAYS_SHORT = [ 'S', 'M', 'T', 'W', 'T', 'F', 'S' ];
 
-	const createEvent = (e) => {
+	const createEvent = (eventTitle, setEventTitle, e) => {
 		e.preventDefault();
 		setEventTitle(eventTitle);
 		setCalendarEvents([
@@ -26,7 +25,10 @@ export const LeftBar = ({ handleDayClick, selectedDay, calendarEvents, setCalend
 		<div className="w-full h-screen90 text-center leftbar">
 			<div className="h-full flex flex-col justify-between">
 				<div className="h-full flex flex-col justify-between DPcalender">
-					<div className="py-2 ml-2 mt-3 mb-3 flex justify-center rounded-full text-xs items-center cursor-pointer shadow-full">
+					<div
+						onClick={() => setDialogStatus(true)}
+						className="py-2 ml-2 mt-3 mb-3 flex justify-center rounded-full text-xs items-center cursor-pointer shadow-full"
+					>
 						<div>
 							<svg className="w-6 h-6" viewBox="0 0 36 36">
 								<path fill="#34A853" d="M16 16v14h4V20z" />
@@ -36,15 +38,11 @@ export const LeftBar = ({ handleDayClick, selectedDay, calendarEvents, setCalend
 								<path fill="none" d="M0 0h36v36H0z" />
 							</svg>
 						</div>
-						<div onClick={() => setDialogStatus(true)} className="ml-1 pr-2">
-							Create
-						</div>
+						<div className="ml-1 pr-2">Create</div>
 					</div>
 
 					<CustomInputDialog
-						createEvent={createEvent}
-						eventTitle={eventTitle}
-						setEventTitle={setEventTitle}
+						handleSave={createEvent}
 						dialogStatus={dialogStatus}
 						setDialogStatus={setDialogStatus}
 					/>
