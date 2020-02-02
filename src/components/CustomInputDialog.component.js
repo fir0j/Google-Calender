@@ -45,7 +45,7 @@ export const CustomInputDialog = ({ handleSave, dialogStatus, setDialogStatus })
 				<div className="mb-2">
 					<form onSubmit={(e) => handleSave(eventTitle, setEventTitle, e)}>
 						<input
-							className="w-full border-gray-500 border-b focus:border-transparent focus:border-blue-700 focus:outline-none text-sm text-gray-600"
+							className="w-full border-gray-500 border-b-2 focus:border-transparent focus:border-blue-600 focus:outline-none text-sm text-gray-600"
 							onChange={(event) => setEventTitle(event.target.value)}
 							value={eventTitle}
 							type="text"
@@ -55,7 +55,7 @@ export const CustomInputDialog = ({ handleSave, dialogStatus, setDialogStatus })
 					</form>
 				</div>
 				<div className="mb-2">
-					<button className="border p-1 mr-2">Event</button>
+					<button className="border p-1 mr-2 bg-blue-500 text-gray-100 rounded">Event</button>
 					<button className="border p-1 mr-2">Remainder</button>
 					<button className="border p-1 mr-2">Task</button>
 				</div>

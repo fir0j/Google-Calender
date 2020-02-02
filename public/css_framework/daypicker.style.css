@@ -213,7 +213,9 @@
 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
 	position: relative;
 
-	background-color: #4a90e2;
+	/* background-color: #4a90e2; */
+	background-color: #116fdbda;
+
 	color: #f0f8ff;
 }
 

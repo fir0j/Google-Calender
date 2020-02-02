@@ -71,23 +71,35 @@ export const LeftBar = ({ handleDayClick, selectedDay, calendarEvents, setCalend
 								<div>
 									<label className="my-3 flex text-sm font-medium">My Calenders</label>
 									<form className="text-xs">
-										<div className="mb-1 flex items-center">
-											<input type="checkbox" name="vehicle1" value="user" checked readOnly />
-											<label>Firoj Siddiki </label>
+										<div className="mb-1 flex  items-center">
+											<label className="container flex text-xs user">
+												Firoj Siddiki
+												<input type="checkbox" checked="checked" />
+												<span className="checkmark user" id="user" />
+											</label>
 										</div>
 
 										<div className="mb-1 flex items-center">
-											<input type="checkbox" name="vehicle2" value="contacts" />
-											<label> Contacts</label>
+											<label className="container flex text-xs">
+												Contacts
+												<input type="checkbox" />
+												<span className="checkmark" id="contacts" />
+											</label>
 										</div>
 
 										<div className="mb-1 flex items-center">
-											<input type="checkbox" name="vehicle3" value="remainder" />
-											<label>Remainder</label>
+											<label className="container flex text-xs">
+												Remainder
+												<input type="checkbox" />
+												<span className="checkmark" id="remainder" />
+											</label>
 										</div>
 										<div className="flex items-center">
-											<input type="checkbox" name="vehicle3" value="tasks" />
-											<label>Tasks</label>
+											<label className="container flex text-xs">
+												Tasks
+												<input type="checkbox" checked="checked" />
+												<span className="checkmark" id="tasks" />
+											</label>
 										</div>
 										<br />
 									</form>
@@ -97,8 +109,11 @@ export const LeftBar = ({ handleDayClick, selectedDay, calendarEvents, setCalend
 								<label className="mb-3 flex text-sm font-medium">Other Calenders</label>
 								<form>
 									<div className="flex items-center text-xs">
-										<input type="checkbox" name="vehicle3" value="Boat" checked readOnly /> Holidays
-										in India<br />
+										<label className="container flex">
+											Holidays in India
+											<input type="checkbox" checked />
+											<span className="checkmark " id="holiday" />
+										</label>
 									</div>
 								</form>
 							</div>

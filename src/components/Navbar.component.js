@@ -73,7 +73,7 @@ export const Navbar = ({ toggleSidebar, navBarDate }) => {
 							<circle cx="12" cy="12" r="3.5" />
 						</svg>
 					</span>
-					<span>
+					<span className="">
 						<button className="px-2 py-1 border rounded text-gray-800">Week</button>
 					</span>
 				</div>
