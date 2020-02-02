@@ -63,7 +63,14 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: rgba(128, 128, 128, 0.6);
+	background: #4a91e2a4;
 }
 
+.demo-app-calendar button {
+	background: #4a90e2;
+}
+
+.customCalender {
+	opacity: 0.9999999;
+}
 @tailwind utilities;

@@ -8,7 +8,7 @@ function App() {
 	const [ showSidebar, setShowSidebar ] = useState(true);
 	const [ selectedDay, setSelectedDay ] = useState(new Date());
 	const [ navBarDate, setNavBarDate ] = useState();
-	const [ calendarEvents, setCalendarEvents ] = useState([ { title: 'custom event', start: '2020-02-05' } ]);
+	const [ calendarEvents, setCalendarEvents ] = useState([ { title: 'custom event', start: '2020-02-02' } ]);
 
 	useEffect(
 		() => {

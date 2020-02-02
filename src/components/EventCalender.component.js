@@ -22,6 +22,7 @@ export const EventCalender = ({ calendarEvents, setCalendarEvents }) => {
 		// calendarApi.next();
 	};
 
+	// why is it not working ?
 	// const handleDateClick = (arg) => (eventTitle, setEventTitle, e) => {
 	// 	alert(dialogStatus);
 	// 	setDialogStatus(true);
@@ -75,8 +76,8 @@ export const EventCalender = ({ calendarEvents, setCalendarEvents }) => {
 	};
 
 	return (
-		<div className="w-auto ml-2  text-xs opacity-50">
-			<div className="demo-app-top">
+		<div className="w-auto ml-2  text-xs customCalender">
+			<div className="demo-app-top hidden">
 				<button className="border-2" onClick={toggleWeekends}>
 					toggle weekends
 				</button>&nbsp;
