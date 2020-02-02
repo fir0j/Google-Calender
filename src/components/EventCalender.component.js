@@ -4,6 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import '../fullCalendar.scss';
+// import { CustomInputDialog } from './CustomInputDialog.component';
 
 export const EventCalender = ({ calendarEvents, setCalendarEvents }) => {
 	const [ calendarWeekends, setCalendarWeekends ] = useState(true);
@@ -20,6 +21,11 @@ export const EventCalender = ({ calendarEvents, setCalendarEvents }) => {
 	};
 
 	const handleDateClick = (arg) => {
+		// return (
+		// 	<div>
+		// 		<CustomInputDialog />
+		// 	</div>
+		// );
 		// alert(arg.dateStr);
 		if (window.confirm('want to add an event on ' + arg.dateStr + '?')) {
 			console.log(arg);

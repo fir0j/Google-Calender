@@ -14,6 +14,7 @@ function App() {
 		() => {
 			handleDayClick(new Date());
 		},
+		// eslint-disable-next-line
 		[ selectedDay ]
 	);
 
