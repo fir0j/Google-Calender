@@ -8674,6 +8674,18 @@ video {
   font-size: 4rem;
 }
 
+.text-2xs {
+  font-size: 0.65rem;
+}
+
+.text-3xs {
+  font-size: 0.55rem;
+}
+
+.text-4xs {
+  font-size: 0.45rem;
+}
+
 .italic {
   font-style: italic;
 }
@@ -17035,6 +17047,18 @@ video {
 
   .sm\:text-6xl {
     font-size: 4rem;
+  }
+
+  .sm\:text-2xs {
+    font-size: 0.65rem;
+  }
+
+  .sm\:text-3xs {
+    font-size: 0.55rem;
+  }
+
+  .sm\:text-4xs {
+    font-size: 0.45rem;
   }
 
   .sm\:italic {
@@ -25401,6 +25425,18 @@ video {
     font-size: 4rem;
   }
 
+  .md\:text-2xs {
+    font-size: 0.65rem;
+  }
+
+  .md\:text-3xs {
+    font-size: 0.55rem;
+  }
+
+  .md\:text-4xs {
+    font-size: 0.45rem;
+  }
+
   .md\:italic {
     font-style: italic;
   }
@@ -33763,6 +33799,18 @@ video {
 
   .lg\:text-6xl {
     font-size: 4rem;
+  }
+
+  .lg\:text-2xs {
+    font-size: 0.65rem;
+  }
+
+  .lg\:text-3xs {
+    font-size: 0.55rem;
+  }
+
+  .lg\:text-4xs {
+    font-size: 0.45rem;
   }
 
   .lg\:italic {
@@ -42129,6 +42177,18 @@ video {
     font-size: 4rem;
   }
 
+  .xl\:text-2xs {
+    font-size: 0.65rem;
+  }
+
+  .xl\:text-3xs {
+    font-size: 0.55rem;
+  }
+
+  .xl\:text-4xs {
+    font-size: 0.45rem;
+  }
+
   .xl\:italic {
     font-style: italic;
   }
@@ -50493,6 +50553,18 @@ video {
     font-size: 4rem;
   }
 
+  .portrait\:text-2xs {
+    font-size: 0.65rem;
+  }
+
+  .portrait\:text-3xs {
+    font-size: 0.55rem;
+  }
+
+  .portrait\:text-4xs {
+    font-size: 0.45rem;
+  }
+
   .portrait\:italic {
     font-style: italic;
   }
@@ -58855,6 +58927,18 @@ video {
 
   .landscape\:text-6xl {
     font-size: 4rem;
+  }
+
+  .landscape\:text-2xs {
+    font-size: 0.65rem;
+  }
+
+  .landscape\:text-3xs {
+    font-size: 0.55rem;
+  }
+
+  .landscape\:text-4xs {
+    font-size: 0.45rem;
   }
 
   .landscape\:italic {
