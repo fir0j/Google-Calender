@@ -66,11 +66,23 @@
 	background: #4a91e2a4;
 }
 
-.demo-app-calendar button {
-	background: #4a90e2;
-}
+/* calendar style */
 
 .customCalender {
 	opacity: 0.9999999;
 }
+
+.demo-app-calendar button {
+	background: #4a90e2;
+}
+
+.fc-center {
+	color: gray;
+}
+
+.fc-widget-header {
+	color: rgb(66, 63, 63, 0.95);
+	height: 40px;
+}
+
 @tailwind utilities;
