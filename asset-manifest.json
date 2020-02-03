@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Google-Calender/static/css/main.65b5c140.chunk.css",
+    "main.js": "/Google-Calender/static/js/main.69e3fb5c.chunk.js",
+    "main.js.map": "/Google-Calender/static/js/main.69e3fb5c.chunk.js.map",
+    "runtime-main.js": "/Google-Calender/static/js/runtime-main.ff22ce50.js",
+    "runtime-main.js.map": "/Google-Calender/static/js/runtime-main.ff22ce50.js.map",
+    "static/css/2.6d986cef.chunk.css": "/Google-Calender/static/css/2.6d986cef.chunk.css",
+    "static/js/2.1ca404a9.chunk.js": "/Google-Calender/static/js/2.1ca404a9.chunk.js",
+    "static/js/2.1ca404a9.chunk.js.map": "/Google-Calender/static/js/2.1ca404a9.chunk.js.map",
+    "index.html": "/Google-Calender/index.html",
+    "precache-manifest.a6a319b3e647e7b9c0ac02c4078e7650.js": "/Google-Calender/precache-manifest.a6a319b3e647e7b9c0ac02c4078e7650.js",
+    "service-worker.js": "/Google-Calender/service-worker.js",
+    "static/css/2.6d986cef.chunk.css.map": "/Google-Calender/static/css/2.6d986cef.chunk.css.map",
+    "static/css/main.65b5c140.chunk.css.map": "/Google-Calender/static/css/main.65b5c140.chunk.css.map",
+    "static/js/2.1ca404a9.chunk.js.LICENSE": "/Google-Calender/static/js/2.1ca404a9.chunk.js.LICENSE",
+    "static/media/next.svg": "/Google-Calender/static/media/next.41e4ce9d.svg",
+    "static/media/previous.svg": "/Google-Calender/static/media/previous.d413bfac.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ff22ce50.js",
+    "static/css/2.6d986cef.chunk.css",
+    "static/js/2.1ca404a9.chunk.js",
+    "static/css/main.65b5c140.chunk.css",
+    "static/js/main.69e3fb5c.chunk.js"
+  ]
+}
