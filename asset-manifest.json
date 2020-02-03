@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Google-Calender/static/css/main.65b5c140.chunk.css",
-    "main.js": "/Google-Calender/static/js/main.63141cef.chunk.js",
-    "main.js.map": "/Google-Calender/static/js/main.63141cef.chunk.js.map",
+    "main.css": "/Google-Calender/static/css/main.207c743c.chunk.css",
+    "main.js": "/Google-Calender/static/js/main.555a0542.chunk.js",
+    "main.js.map": "/Google-Calender/static/js/main.555a0542.chunk.js.map",
     "runtime-main.js": "/Google-Calender/static/js/runtime-main.ff22ce50.js",
     "runtime-main.js.map": "/Google-Calender/static/js/runtime-main.ff22ce50.js.map",
     "static/css/2.6d986cef.chunk.css": "/Google-Calender/static/css/2.6d986cef.chunk.css",
     "static/js/2.1ca404a9.chunk.js": "/Google-Calender/static/js/2.1ca404a9.chunk.js",
     "static/js/2.1ca404a9.chunk.js.map": "/Google-Calender/static/js/2.1ca404a9.chunk.js.map",
     "index.html": "/Google-Calender/index.html",
-    "precache-manifest.9cc4e89bcf0a9d1b461cfc36f05791a5.js": "/Google-Calender/precache-manifest.9cc4e89bcf0a9d1b461cfc36f05791a5.js",
+    "precache-manifest.69808c7eccc0b65ebaa11de05a8a6891.js": "/Google-Calender/precache-manifest.69808c7eccc0b65ebaa11de05a8a6891.js",
     "service-worker.js": "/Google-Calender/service-worker.js",
     "static/css/2.6d986cef.chunk.css.map": "/Google-Calender/static/css/2.6d986cef.chunk.css.map",
-    "static/css/main.65b5c140.chunk.css.map": "/Google-Calender/static/css/main.65b5c140.chunk.css.map",
+    "static/css/main.207c743c.chunk.css.map": "/Google-Calender/static/css/main.207c743c.chunk.css.map",
     "static/js/2.1ca404a9.chunk.js.LICENSE": "/Google-Calender/static/js/2.1ca404a9.chunk.js.LICENSE",
     "static/media/next.svg": "/Google-Calender/static/media/next.41e4ce9d.svg",
     "static/media/previous.svg": "/Google-Calender/static/media/previous.d413bfac.svg"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.ff22ce50.js",
     "static/css/2.6d986cef.chunk.css",
     "static/js/2.1ca404a9.chunk.js",
-    "static/css/main.65b5c140.chunk.css",
-    "static/js/main.63141cef.chunk.js"
+    "static/css/main.207c743c.chunk.css",
+    "static/js/main.555a0542.chunk.js"
   ]
 }
