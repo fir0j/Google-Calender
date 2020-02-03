@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DayPicker from 'react-day-picker';
 import { CustomInputDialog } from './CustomInputDialog.component';
+import '../css/daypicker.style.css';
 
 export const LeftBar = ({ handleDayClick, selectedDay, calendarEvents, setCalendarEvents }) => {
 	const [ dialogStatus, setDialogStatus ] = useState(false);

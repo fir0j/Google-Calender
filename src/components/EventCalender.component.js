@@ -3,8 +3,8 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import '../fullCalendar.scss';
 import { CustomInputDialog } from './CustomInputDialog.component';
+import '../css/sass/fullCalendar.scss';
 
 export const EventCalender = ({ calendarEvents, setCalendarEvents }) => {
 	const [ calendarWeekends, setCalendarWeekends ] = useState(true);

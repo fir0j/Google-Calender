@@ -1,4 +1,5 @@
 {
+	"homepage": "https://fir0j.github.io/Google-Calender",
 	"name": "google-calender",
 	"version": "0.1.0",
 	"private": true,
@@ -13,6 +14,7 @@
 		"@testing-library/react": "^9.4.0",
 		"@testing-library/user-event": "^7.2.1",
 		"autoprefixer": "^9.7.4",
+		"gh-pages": "^2.2.0",
 		"node-sass": "^4.13.1",
 		"postcss-cli": "^7.1.0",
 		"react": "^16.12.0",
@@ -24,24 +26,18 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
-		"build": "postcss initialize_tailwind/tailwind_initials.css -o public/css_framework/tailwind.css",
-		"watch": "postcss initialize_tailwind/tailwind_initials.css -o public/css_framework/tailwind.css --watch",
+		"build": "react-scripts build",
 		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+		"eject": "react-scripts eject",
+		"watch": "postcss src/css/framework/tailwind.generator.css -o src/css/framework/tailwind.custom.css --watch",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
 	},
 	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
+		"production": [ ">0.2%", "not dead", "not op_mini all" ],
+		"development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
 	}
 }
