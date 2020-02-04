@@ -6,7 +6,7 @@ export const Navbar = React.forwardRef(({ toggleSidebar, navBarDate }, calendarC
 	const [ allEvents, setAllEvents ] = useState(null);
 	const [ queryString, setQueryString ] = useState(null);
 	const [ result, setResult ] = useState(null);
-	const [ hideResult, setHideResult ] = useState(false);
+	const [ showResult, setShowResult ] = useState(true);
 
 	useEffect(
 		() => {
@@ -22,8 +22,14 @@ export const Navbar = React.forwardRef(({ toggleSidebar, navBarDate }, calendarC
 		calendar.gotoDate(date.toISOString().slice(0, 10));
 	};
 
+	const toggleSearchList = () => {
+		setShowResult(!showResult);
+		setResult(null);
+	};
+
 	const SearchEvents = (searchKey, e) => {
 		e.preventDefault();
+		setShowResult(true);
 		setQueryString(null);
 		if (searchKey != null) {
 			let eventsFound = allEvents.filter((item) => item.title.toLowerCase() === searchKey.toLowerCase());
@@ -41,16 +47,21 @@ export const Navbar = React.forwardRef(({ toggleSidebar, navBarDate }, calendarC
 		const { title, start } = item;
 		let date = start.toString().slice(0, 10);
 		return (
-			<div
-				className="rounded w-1/3 mt-4 flex  justify-center bg-blue-500 text-gray-100"
-				onClick={() => goToDate(start)}
-			>
-				<div className="flex justify-around w-full items-center border my-1 cursor-pointer">
-					<div className="flex items-center">
-						<p className="w-2 h-2 mr-4 border bg-black rounded-full" />
-						<p>{title}</p>
+			<div className="rounded w-1/3 mt-4 flex flex-col justify-center items-center text-gray-100">
+				<div className="bg-blue-500 w-full" onClick={() => goToDate(start)}>
+					<div className="flex justify-around w-full items-center border my-1 cursor-pointer">
+						<div className="flex items-center">
+							<p className="w-2 h-2 mr-4 border bg-gray-700 rounded-full" />
+							<p>{title}</p>
+						</div>
+						<p>{date}</p>
 					</div>
-					<p>{date}</p>
+				</div>
+				<div
+					className="border w-1/3 rounded bg-red-800 hover:bg-red-700 flex justify-center cursor-pointer mt-3 text-xs"
+					onClick={toggleSearchList}
+				>
+					<p>ClearAllSearchResult</p>
 				</div>
 			</div>
 		);
@@ -133,7 +144,7 @@ export const Navbar = React.forwardRef(({ toggleSidebar, navBarDate }, calendarC
 								<path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z" />
 							</svg>
 						</span>
-						<span className="mr-4">
+						<span className="mr-4 cursor-pointer">
 							<svg
 								className=" h-4 w-4 md:w-6 md:h-6 fill-current text-gray-600"
 								viewBox="0 0 24 24"
@@ -171,18 +182,21 @@ export const Navbar = React.forwardRef(({ toggleSidebar, navBarDate }, calendarC
 			</nav>
 
 			<hr />
-
-			<div className="flex">
-				{result != null ? (
-					<div className="w-full flex flex-col items-center justify-center">
-						{result.map((item) => {
-							return <DisplayList key={item.id} item={item} />;
-						})}
-					</div>
-				) : (
-					<div className="hidden" />
-				)}
-			</div>
+			{showResult === true ? (
+				<div className="flex">
+					{result != null ? (
+						<div className="w-full flex flex-col items-center justify-center mb-4">
+							{result.map((item) => {
+								return <DisplayList key={item.id} item={item} />;
+							})}
+						</div>
+					) : (
+						<div className="hidden" />
+					)}
+				</div>
+			) : (
+				<div />
+			)}
 		</div>
 	);
 });
