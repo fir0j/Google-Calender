@@ -50,35 +50,36 @@ function App() {
 
 	return (
 		<main>
-			<Navbar toggleSidebar={toggleSidebar} navBarDate={navBarDate} />
-			<hr />
-			{showSidebar === true ? (
-				<div className="flex w-full">
-					<div className="w-56 hidden landscape:flex sm:flex-none ">
-						<LeftBar
-							setNavBarDate={setNavBarDate}
-							selectedDay={selectedDay}
-							handleDayClick={handleDayClick}
-							ref={calendarComponentRef}
-						/>
+			<Navbar toggleSidebar={toggleSidebar} navBarDate={navBarDate} ref={calendarComponentRef} />
+			<div>
+				{showSidebar === true ? (
+					<div className="flex w-full">
+						<div className="w-56 hidden landscape:flex sm:flex-none ">
+							<LeftBar
+								setNavBarDate={setNavBarDate}
+								selectedDay={selectedDay}
+								handleDayClick={handleDayClick}
+								ref={calendarComponentRef}
+							/>
+						</div>
+						<div className="w-auto m-1 h-screen90 overflow-auto pr-1">
+							<EventCalender calendarEvents={calendarEvents} ref={calendarComponentRef} />
+						</div>
+						<div className="landscape:w-16 max-w-md hidden landscape:flex h-screen90 flex-none text-center ">
+							<RightBar />
+						</div>
 					</div>
-					<div className="w-auto m-1 h-screen90 overflow-auto pr-1">
-						<EventCalender calendarEvents={calendarEvents} ref={calendarComponentRef} />
+				) : (
+					<div className="flex w-full">
+						<div className="w-full">
+							<EventCalender calendarEvents={calendarEvents} ref={calendarComponentRef} />
+						</div>
+						<div className="landscape:w-16 max-w-md hidden landscape:flex h-screen90 flex-none  text-center text-xs">
+							<RightBar />
+						</div>
 					</div>
-					<div className="landscape:w-16 max-w-md hidden landscape:flex h-screen90 flex-none text-center ">
-						<RightBar />
-					</div>
-				</div>
-			) : (
-				<div className="flex w-full">
-					<div className="w-full">
-						<EventCalender />
-					</div>
-					<div className="landscape:w-16 max-w-md hidden landscape:flex h-screen90 flex-none  text-center text-xs">
-						<RightBar />
-					</div>
-				</div>
-			)}
+				)}
+			</div>
 		</main>
 	);
 }

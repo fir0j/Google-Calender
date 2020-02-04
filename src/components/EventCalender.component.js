@@ -35,7 +35,6 @@ export const EventCalender = React.forwardRef(({ calendarEvents }, calendarCompo
 
 	return (
 		<div className="w-auto ml-2  text-xs customCalender">
-			<button onClick={handleEventClick}>add event</button>
 			<div className="demo-app-top hidden">
 				<button className="border-2" onClick={toggleWeekends}>
 					toggle weekends
@@ -44,6 +43,7 @@ export const EventCalender = React.forwardRef(({ calendarEvents }, calendarCompo
 					go to a date in the past
 				</button>&nbsp; (also, click a date/time to add an event)
 			</div>
+
 			<div className="demo-app-calendar">
 				<FullCalendar
 					defaultView="dayGridMonth"
