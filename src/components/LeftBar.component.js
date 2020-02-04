@@ -1,25 +1,14 @@
 import React, { useState } from 'react';
 import DayPicker from 'react-day-picker';
-import { CustomInputDialog } from './CustomInputDialog.component';
+import { CreateDialog } from './CreateDialog.component';
 import '../css/daypicker.style.css';
 
-export const LeftBar = ({ handleDayClick, selectedDay, calendarEvents, setCalendarEvents }) => {
+export const LeftBar = React.forwardRef(({ handleDayClick, selectedDay }, calendarComponentRef) => {
 	const [ dialogStatus, setDialogStatus ] = useState(false);
-
 	const WEEKDAYS_SHORT = [ 'S', 'M', 'T', 'W', 'T', 'F', 'S' ];
 
-	const createEvent = (eventTitle, setEventTitle, e) => {
-		e.preventDefault();
-		setEventTitle(eventTitle);
-		setCalendarEvents([
-			...calendarEvents,
-			{
-				title: eventTitle,
-				start: new Date(),
-				allDay: true
-			}
-		]);
-		setEventTitle(null);
+	const handleCreateClick = () => {
+		setDialogStatus(true);
 	};
 
 	return (
@@ -27,7 +16,7 @@ export const LeftBar = ({ handleDayClick, selectedDay, calendarEvents, setCalend
 			<div className="h-full flex flex-col justify-between">
 				<div className="h-full flex flex-col justify-between DPcalender">
 					<div
-						onClick={() => setDialogStatus(true)}
+						onClick={handleCreateClick}
 						className="py-2 ml-2 mt-3 mb-3 flex justify-center rounded-full text-xs items-center cursor-pointer shadow-full"
 					>
 						<div>
@@ -42,10 +31,11 @@ export const LeftBar = ({ handleDayClick, selectedDay, calendarEvents, setCalend
 						<div className="ml-1 pr-2">Create</div>
 					</div>
 
-					<CustomInputDialog
-						handleSave={createEvent}
+					<CreateDialog
 						dialogStatus={dialogStatus}
 						setDialogStatus={setDialogStatus}
+						selectedDay={new Date().toISOString().slice(0, 10)}
+						ref={calendarComponentRef}
 					/>
 
 					<div className="h-full flex flex-col justify-start ml-6">
@@ -130,4 +120,4 @@ export const LeftBar = ({ handleDayClick, selectedDay, calendarEvents, setCalend
 			</footer>
 		</div>
 	);
-};
+});

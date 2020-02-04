@@ -3,80 +3,39 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { CustomInputDialog } from './CustomInputDialog.component';
+import { DynamicDialog } from './DynamicDialog.component';
+import { CrudDialog } from './CrudDialog.component';
 import '../css/sass/fullCalendar.scss';
 
-export const EventCalender = ({ calendarEvents, setCalendarEvents }) => {
+export const EventCalender = React.forwardRef(({ calendarEvents }, calendarComponentRef) => {
 	const [ calendarWeekends, setCalendarWeekends ] = useState(true);
-	const [ dialogStatus, setDialogStatus ] = useState(false);
-	const [ getarg, setArg ] = useState({ start: null, allDay: null });
-	const calendarComponentRef = React.createRef();
+	const [ DDStatus, setDDStatus ] = useState(false);
+	const [ CDStatus, setCDStatus ] = useState(false);
+	const [ selectedDate, setSelectedDate ] = useState(new Date().toISOString().slice(0, 10));
+	const [ eventClicked, setEventClicked ] = useState(null);
+
+	const gotoPast = () => {
+		let calendar = calendarComponentRef.current.getApi();
+		calendar.gotoDate('2000-01-01');
+	};
 
 	const toggleWeekends = () => {
 		setCalendarWeekends(!calendarWeekends);
 	};
 
-	const gotoPast = () => {
-		let calendarApi = calendarComponentRef.current.getApi();
-		calendarApi.gotoDate('2000-01-01');
-		// calendarApi.next();
-	};
-
-	// why is it not working ?
-	// const handleDateClick = (arg) => (eventTitle, setEventTitle, e) => {
-	// 	alert(dialogStatus);
-	// 	setDialogStatus(true);
-	// 	setCalendarEvents([
-	// 		...calendarEvents,
-	// 		{
-	// 			title: eventTitle,
-	// 			start: arg.date,
-	// 			allDay: arg.allDay
-	// 		}
-	// 	]);
-	// 	e.preventDefault();
-	// 	setEventTitle(null);
-	// };
-
-	const addEvent = (eventTitle, setEventTitle, e) => {
-		e.preventDefault();
-		setCalendarEvents([
-			...calendarEvents,
-			{
-				title: eventTitle,
-				start: getarg.start,
-				allDay: getarg.allDay
-			}
-		]);
-		console.log(eventTitle);
-		console.log(getarg);
-		setEventTitle(null);
-		setDialogStatus(false);
-	};
-
 	const handleDateClick = (arg) => {
-		setDialogStatus(true);
-		setArg({ start: arg.dateStr, allDay: arg.allDay });
+		setDDStatus(true);
+		setSelectedDate(arg.dateStr);
 	};
 
-	const handleEventClick = ({ event, view }) => {
-		console.log(event);
-		let title = prompt('Want to update ' + event.title + '?');
-		let filteredEvents = calendarEvents.filter((item) => item.title !== event.title);
-		if (title) {
-			setCalendarEvents([
-				...filteredEvents,
-				{
-					title: title,
-					start: event.start,
-					allDay: event.allDay
-				}
-			]);
-		}
+	const handleEventClick = ({ event }) => {
+		setEventClicked(event);
+		setCDStatus(true);
 	};
 
 	return (
 		<div className="w-auto ml-2  text-xs customCalender">
+			<button onClick={handleEventClick}>add event</button>
 			<div className="demo-app-top hidden">
 				<button className="border-2" onClick={toggleWeekends}>
 					toggle weekends
@@ -99,13 +58,27 @@ export const EventCalender = ({ calendarEvents, setCalendarEvents }) => {
 					events={calendarEvents}
 					dateClick={handleDateClick}
 					eventClick={handleEventClick}
-					selectable={true}
+					selectable={false}
 					editable={true}
 					eventLimit={true}
-					selectHelper={true}
+					selectHelper={false}
 				/>
 			</div>
-			<CustomInputDialog handleSave={addEvent} dialogStatus={dialogStatus} setDialogStatus={setDialogStatus} />
+
+			<DynamicDialog
+				DDStatus={DDStatus}
+				setDDStatus={setDDStatus}
+				selectedDay={selectedDate}
+				ref={calendarComponentRef}
+			/>
+
+			<CrudDialog
+				CDStatus={CDStatus}
+				setCDStatus={setCDStatus}
+				selectedDay={selectedDate}
+				eventClicked={eventClicked}
+				ref={calendarComponentRef}
+			/>
 		</div>
 	);
-};
+});

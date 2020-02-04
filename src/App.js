@@ -8,7 +8,27 @@ function App() {
 	const [ showSidebar, setShowSidebar ] = useState(true);
 	const [ selectedDay, setSelectedDay ] = useState(new Date());
 	const [ navBarDate, setNavBarDate ] = useState();
-	const [ calendarEvents, setCalendarEvents ] = useState([ { title: 'custom event', start: '2020-02-02' } ]);
+	const [ calendarEvents ] = useState([
+		{
+			id: '1',
+			title: "my Today's event",
+			start: new Date().toISOString().slice(0, 10),
+			allDay: true
+		},
+		{
+			id: '2',
+			title: 'cheatDay',
+			start: '2020-02-08',
+			allDay: true
+		},
+		{
+			id: '3',
+			title: 'seminar in College',
+			start: '2020-02-16',
+			allDay: true
+		}
+	]);
+	const calendarComponentRef = React.createRef();
 
 	useEffect(
 		() => {
@@ -18,6 +38,7 @@ function App() {
 		[ selectedDay ]
 	);
 
+	// for normal calender
 	const handleDayClick = (date) => {
 		setSelectedDay(selectedDay);
 		setNavBarDate(date.toLocaleDateString('default', { month: 'long' }) + ' ' + date.getFullYear());
@@ -38,12 +59,11 @@ function App() {
 							setNavBarDate={setNavBarDate}
 							selectedDay={selectedDay}
 							handleDayClick={handleDayClick}
-							calendarEvents={calendarEvents}
-							setCalendarEvents={setCalendarEvents}
+							ref={calendarComponentRef}
 						/>
 					</div>
 					<div className="w-auto m-1 h-screen90 overflow-auto pr-1">
-						<EventCalender calendarEvents={calendarEvents} setCalendarEvents={setCalendarEvents} />
+						<EventCalender calendarEvents={calendarEvents} ref={calendarComponentRef} />
 					</div>
 					<div className="landscape:w-16 max-w-md hidden landscape:flex h-screen90 flex-none text-center ">
 						<RightBar />
