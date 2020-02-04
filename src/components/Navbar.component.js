@@ -6,6 +6,7 @@ export const Navbar = React.forwardRef(({ toggleSidebar, navBarDate }, calendarC
 	const [ allEvents, setAllEvents ] = useState(null);
 	const [ queryString, setQueryString ] = useState(null);
 	const [ result, setResult ] = useState(null);
+	const [ hideResult, setHideResult ] = useState(false);
 
 	useEffect(
 		() => {
@@ -15,6 +16,11 @@ export const Navbar = React.forwardRef(({ toggleSidebar, navBarDate }, calendarC
 		// eslint-disable-next-line
 		[ queryString ]
 	);
+
+	const goToDate = (date) => {
+		let calendar = calendarComponentRef.current.getApi();
+		calendar.gotoDate(date.toISOString().slice(0, 10));
+	};
 
 	const SearchEvents = (searchKey, e) => {
 		e.preventDefault();
@@ -35,7 +41,10 @@ export const Navbar = React.forwardRef(({ toggleSidebar, navBarDate }, calendarC
 		const { title, start } = item;
 		let date = start.toString().slice(0, 10);
 		return (
-			<div className="rounded w-1/3 mt-4 flex  justify-center bg-blue-500 text-gray-100">
+			<div
+				className="rounded w-1/3 mt-4 flex  justify-center bg-blue-500 text-gray-100"
+				onClick={() => goToDate(start)}
+			>
 				<div className="flex justify-around w-full items-center border my-1 cursor-pointer">
 					<div className="flex items-center">
 						<p className="w-2 h-2 mr-4 border bg-black rounded-full" />
@@ -162,9 +171,10 @@ export const Navbar = React.forwardRef(({ toggleSidebar, navBarDate }, calendarC
 			</nav>
 
 			<hr />
+
 			<div className="flex">
 				{result != null ? (
-					<div className="w-full flex justify-center">
+					<div className="w-full flex flex-col items-center justify-center">
 						{result.map((item) => {
 							return <DisplayList key={item.id} item={item} />;
 						})}
