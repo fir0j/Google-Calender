@@ -65,7 +65,7 @@ export const LeftBar = React.forwardRef(({ handleDayClick, selectedDay }, calend
 										<div className="mb-1 flex  items-center">
 											<label className="container flex text-xs user">
 												Firoj Siddiki
-												<input type="checkbox" checked="checked" />
+												<input type="checkbox" checked="checked" readOnly />
 												<span className="checkmark user" id="user" />
 											</label>
 										</div>
@@ -88,7 +88,7 @@ export const LeftBar = React.forwardRef(({ handleDayClick, selectedDay }, calend
 										<div className="flex items-center">
 											<label className="container flex text-xs">
 												Tasks
-												<input type="checkbox" checked="checked" />
+												<input type="checkbox" checked="checked" readOnly />
 												<span className="checkmark" id="tasks" />
 											</label>
 										</div>
@@ -102,7 +102,7 @@ export const LeftBar = React.forwardRef(({ handleDayClick, selectedDay }, calend
 									<div className="flex items-center text-xs">
 										<label className="container flex">
 											Holidays in India
-											<input type="checkbox" checked />
+											<input type="checkbox" checked readOnly />
 											<span className="checkmark " id="holiday" />
 										</label>
 									</div>

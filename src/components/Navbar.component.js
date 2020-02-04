@@ -4,7 +4,7 @@ import Next from '../assests/next.svg';
 
 export const Navbar = React.forwardRef(({ toggleSidebar, navBarDate }, calendarComponentRef) => {
 	const [ allEvents, setAllEvents ] = useState(null);
-	const [ queryString, setQueryString ] = useState(null);
+	const [ queryString, setQueryString ] = useState('');
 	const [ result, setResult ] = useState(null);
 	const [ showResult, setShowResult ] = useState(true);
 
